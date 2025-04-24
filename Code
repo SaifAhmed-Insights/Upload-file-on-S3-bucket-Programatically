@@ -1,0 +1,18 @@
+import boto3
+
+# Initialize S3 client with credentials
+s3 = boto3.client(
+    's3',
+    aws_access_key_id='*****',
+    aws_secret_access_key='*****/',
+    region_name='us-east-2'
+)
+
+# Upload file (note the raw string for the file path)
+s3.upload_file(
+    Filename=r'C:\Users\Saif Ahmed\Pictures\Saved Pictures\AmazonAWS.jpeg',
+    Bucket='mypython-s3-saifahmed',
+    Key='AmzAWS.jpeg'
+)
+
+print("Upload complete.")
